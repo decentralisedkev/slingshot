@@ -199,7 +199,7 @@ where
                 Instruction::Verify => self.verify()?,
                 Instruction::Unblind => unimplemented!(),
                 Instruction::Issue => self.issue()?,
-                Instruction::Borrow => unimplemented!(),
+                Instruction::Borrow => self.borrow()?,
                 Instruction::Retire => self.retire()?,
                 Instruction::Qty => unimplemented!(),
                 Instruction::Flavor => unimplemented!(),

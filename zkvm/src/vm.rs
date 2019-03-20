@@ -429,13 +429,6 @@ where
         Ok(())
     }
 
-    fn not(&mut self) -> Result<(), VMError> {
-        let c1 = self.pop_item()?.to_constraint()?;
-        let c2 = Constraint::Not(Box::new(c1));
-        self.push_item(c2);
-        Ok(())
-    }
-
     fn verify(&mut self) -> Result<(), VMError> {
         let constraint = self.pop_item()?.to_constraint()?;
         constraint.verify(self.delegate.cs())?;
